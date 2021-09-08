@@ -6,10 +6,4 @@ public class Radio {
     public int currentVolume;
     public int currentStation;
     public boolean on;
-
-    public int CurrentVolume() {
-        RadioInside Volume = new RadioInside();
-        return Volume.getCurrentVolume();
-    }
-
 }
