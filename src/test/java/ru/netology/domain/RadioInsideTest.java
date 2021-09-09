@@ -23,17 +23,17 @@ class RadioInsideTest {
     }
 
     @Test
-    public void shouldIncreaseStation() {
+    public void shouldNextStation() {
         RadioInside station = new RadioInside();
-        station.setIncreaseStation(8);
-        int expected = 9;
-        assertEquals(expected, station.getCurrentStation());
+        int expected = station.getCurrentStation() + 1;
+        if (expected > 9) { expected = 0;}
+        assertEquals(expected, station.setNextStation());
     }
     @Test
-    public void shouldDecreaseStation() {
+    public void shouldPrevStation() {
         RadioInside station = new RadioInside();
-        station.setDecreaseStation(0);
-        int expected = 9;
-        assertEquals(expected, station.getCurrentStation());
+        int expected = station.getCurrentStation() - 1;
+        if (expected < 0) { expected = 9;}
+        assertEquals(expected, station.setPrevStation());
     }
 }
