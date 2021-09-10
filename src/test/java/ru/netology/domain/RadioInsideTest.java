@@ -21,6 +21,9 @@ class RadioInsideTest {
         volume.currentVolume = 11;
         volume.setIncreaseVolume();
         assertEquals(10, volume.getCurrentVolume());
+        volume.currentVolume = 9;
+        volume.setIncreaseVolume();
+        assertEquals(10, volume.getCurrentVolume());
     }
 
     @Test
@@ -30,6 +33,9 @@ class RadioInsideTest {
         volume.setDecreaseVolume();
         assertEquals(0, volume.getCurrentVolume());
         volume.currentVolume = 0;
+        volume.currentVolume = 1;
+        volume.setDecreaseVolume();
+        assertEquals(0, volume.getCurrentVolume());
         volume.setDecreaseVolume();
         assertEquals(0, volume.getCurrentVolume());
         volume.currentVolume = 10;
@@ -52,6 +58,9 @@ class RadioInsideTest {
         station.currentStation = 9;
         station.setNextStation();
         assertEquals(0, station.getCurrentStation());
+        station.currentStation = 8;
+        station.setNextStation();
+        assertEquals(9, station.getCurrentStation());
         station.currentStation = 10;
         station.setNextStation();
         assertEquals(0, station.getCurrentStation());
@@ -83,6 +92,9 @@ class RadioInsideTest {
         station.currentStation = 0;
         station.setStation();
         assertEquals(0, station.getCurrentStation());
+        station.currentStation = 9;
+        station.setStation();
+        assertEquals(9, station.getCurrentStation());
         station.currentStation = 10;
         station.setStation();
         assertEquals(9, station.getCurrentStation());

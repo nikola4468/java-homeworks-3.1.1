@@ -47,20 +47,20 @@ public class RadioInside {
 
     public void setNextStation() {
         getCurrentStation();
-        if (currentStation < stationMax) {
+        if (currentStation <= stationMax) {
             this.currentStation = currentStation + 1;
         }
-        if (currentStation == stationMax) {
+        if (currentStation > stationMax) {
             this.currentStation = stationMin;
         }
     }
 
     public void setPrevStation() {
         getCurrentStation();
-        if (currentStation > stationMin) {
+        if (currentStation >= stationMin) {
             this.currentStation = currentStation - 1;
         }
-        if (currentStation == stationMin) {
+        if (currentStation < stationMin) {
             this.currentStation = stationMax;
         }
     }
