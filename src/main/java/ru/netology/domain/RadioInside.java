@@ -2,57 +2,72 @@ package ru.netology.domain;
 
 public class RadioInside {
 
-    private int currentVolume;
-    private int currentStation;
-//    private boolean on;
-
-//    public boolean isOn() {
-//        return on;
-//    }
-//
-//    public void setOn(boolean on) {
-//        this.on = on;
-//    }
+    private int volumeMax = 10;
+    private int volumeMin = 0;
+    public int currentVolume;
+    private int stationMax = 9;
+    private int stationMin = 0;
+    public int currentStation;
 
     public int getCurrentVolume() {
+        if (currentVolume >= volumeMax)
+            return currentVolume = volumeMax;
+        if (currentVolume <= volumeMin)
+            return currentVolume = volumeMin;
         return currentVolume;
     }
 
-    public int setIncreaseVolume() {
-        if ((currentVolume < 10) & (currentVolume >= 0)) {
+    public void setIncreaseVolume() {
+        getCurrentVolume();
+        if (currentVolume < volumeMax) {
             this.currentVolume = currentVolume + 1;
         }
-        return currentVolume;
+        if (currentVolume == volumeMax) {
+            this.currentVolume = volumeMax;
+        }
     }
 
-    public int setDecreaseVolume() {
-        if ((currentVolume <= 10) & (currentVolume > 0)) {
+    public void setDecreaseVolume() {
+        getCurrentVolume();
+        if (currentVolume > volumeMin) {
             this.currentVolume = currentVolume - 1;
         }
-        return currentVolume;
+        if (currentVolume == volumeMin) {
+            this.currentVolume = volumeMin;
+        }
     }
 
     public int getCurrentStation() {
+        if (currentStation >= stationMax)
+            return currentStation = stationMax;
+        if (currentStation <= stationMin)
+            return currentStation = stationMin;
         return currentStation;
     }
 
-    public int setNextStation() {
-        if ((currentStation < 9) & (currentStation >= 0)) {
+    public void setNextStation() {
+        getCurrentStation();
+        if (currentStation < stationMax) {
             this.currentStation = currentStation + 1;
         }
-        if (currentStation >= 9) {
-            this.currentStation = 0;
+        if (currentStation == stationMax) {
+            this.currentStation = stationMin;
         }
-        return currentStation;
     }
 
-    public int setPrevStation() {
-        if ((currentStation <= 9) & (currentStation > 0)) {
+    public void setPrevStation() {
+        getCurrentStation();
+        if (currentStation > stationMin) {
             this.currentStation = currentStation - 1;
         }
-        if (currentStation <= 0) {
-            this.currentStation = 9;
+        if (currentStation == stationMin) {
+            this.currentStation = stationMax;
         }
-        return currentStation;
+    }
+
+    public void setStation() {
+        if ((currentStation <= stationMax) & (currentStation >= stationMin)) {
+            this.currentStation = currentStation;
+        }
     }
 }
