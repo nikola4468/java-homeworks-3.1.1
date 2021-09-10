@@ -11,14 +11,13 @@ public class RadioInside {
 
     public void setCurrentVolume() {
         if (currentVolume >= volumeMax) {
-            currentVolume = volumeMax;
+            this.currentVolume = volumeMax;
         }
         if (currentVolume <= volumeMin) {
-            currentVolume = volumeMin;
+            this.currentVolume = volumeMin;
         }
-        if ((currentVolume >= volumeMin) & (currentVolume <= volumeMax)) {
-           this.currentVolume = currentVolume;
-        }
+        this.currentVolume = currentVolume;
+
     }
 
     public int getCurrentVolume() {
@@ -26,7 +25,7 @@ public class RadioInside {
     }
 
     public void setIncreaseVolume() {
-        getCurrentVolume();
+        setCurrentVolume();
         if (currentVolume < volumeMax) {
             this.currentVolume = currentVolume + 1;
         }
@@ -36,7 +35,7 @@ public class RadioInside {
     }
 
     public void setDecreaseVolume() {
-        getCurrentVolume();
+        setCurrentVolume();
         if (currentVolume > volumeMin) {
             this.currentVolume = currentVolume - 1;
         }
@@ -47,11 +46,12 @@ public class RadioInside {
 
     public void setCurrentStation() {
         if (currentStation >= stationMax) {
-            currentStation = stationMax;}
+            this.currentStation = stationMax;
+        }
         if (currentStation <= stationMin) {
-           currentStation = stationMin;}
-        if ((currentStation >= stationMin) & (currentStation <= stationMax)) {
-        this.currentVolume = currentStation;}
+            this.currentStation = stationMin;
+        }
+        this.currentVolume = currentStation;
     }
 
     public int getCurrentStation() {
@@ -59,28 +59,25 @@ public class RadioInside {
     }
 
     public void setNextStation() {
-        getCurrentStation();
-        if (currentStation <= stationMax) {
+        setCurrentStation();
+        if (currentStation < stationMax) {
             this.currentStation = currentStation + 1;
-        }
-        if (currentStation > stationMax) {
+        } else {
             this.currentStation = stationMin;
         }
     }
 
     public void setPrevStation() {
-        getCurrentStation();
-        if (currentStation >= stationMin) {
+        setCurrentStation();
+        if (currentStation > stationMin) {
             this.currentStation = currentStation - 1;
-        }
-        if (currentStation < stationMin) {
+        } else {
             this.currentStation = stationMax;
         }
     }
 
     public void setStation() {
-        if ((currentStation <= stationMax) & (currentStation >= stationMin)) {
-            this.currentStation = currentStation;
-        }
+        setCurrentStation();
+        this.currentStation = currentStation;
     }
 }
