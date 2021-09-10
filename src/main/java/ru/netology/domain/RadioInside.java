@@ -9,11 +9,19 @@ public class RadioInside {
     private int stationMin = 0;
     public int currentStation;
 
+    public void setCurrentVolume() {
+        if (currentVolume >= volumeMax) {
+            currentVolume = volumeMax;
+        }
+        if (currentVolume <= volumeMin) {
+            currentVolume = volumeMin;
+        }
+        if ((currentVolume >= volumeMin) & (currentVolume <= volumeMax)) {
+           this.currentVolume = currentVolume;
+        }
+    }
+
     public int getCurrentVolume() {
-        if (currentVolume >= volumeMax)
-            return currentVolume = volumeMax;
-        if (currentVolume <= volumeMin)
-            return currentVolume = volumeMin;
         return currentVolume;
     }
 
@@ -37,11 +45,16 @@ public class RadioInside {
         }
     }
 
+    public void setCurrentStation() {
+        if (currentStation >= stationMax) {
+            currentStation = stationMax;}
+        if (currentStation <= stationMin) {
+           currentStation = stationMin;}
+        if ((currentStation >= stationMin) & (currentStation <= stationMax)) {
+        this.currentVolume = currentStation;}
+    }
+
     public int getCurrentStation() {
-        if (currentStation >= stationMax)
-            return currentStation = stationMax;
-        if (currentStation <= stationMin)
-            return currentStation = stationMin;
         return currentStation;
     }
 
