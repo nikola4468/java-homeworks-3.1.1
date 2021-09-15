@@ -9,115 +9,85 @@ class RadioInsideTest {
     @Test
     public void shouldIncreaseVolume() {
         RadioInside volume = new RadioInside();
-        volume.currentVolume = -1;
-        volume.setIncreaseVolume();
+        volume.setIncreaseVolume(-1);
         assertEquals(1, volume.getCurrentVolume());
-        volume.currentVolume = 0;
-        volume.setIncreaseVolume();
+        volume.setIncreaseVolume(0);
         assertEquals(1, volume.getCurrentVolume());
-        volume.currentVolume = 1;
-        volume.setIncreaseVolume();
+        volume.setIncreaseVolume(1);
         assertEquals(2, volume.getCurrentVolume());
-        volume.currentVolume = 9;
-        volume.setIncreaseVolume();
+        volume.setIncreaseVolume(9);
         assertEquals(10, volume.getCurrentVolume());
-        volume.currentVolume = 10;
-        volume.setIncreaseVolume();
+        volume.setIncreaseVolume(10);
         assertEquals(10, volume.getCurrentVolume());
-        volume.currentVolume = 11;
-        volume.setIncreaseVolume();
+        volume.setIncreaseVolume(11);
         assertEquals(10, volume.getCurrentVolume());
     }
 
     @Test
     public void shouldDecreaseVolume() {
         RadioInside volume = new RadioInside();
-        volume.currentVolume = -1;
-        volume.setDecreaseVolume();
+        volume.setDecreaseVolume(-1);
         assertEquals(0, volume.getCurrentVolume());
-        volume.currentVolume = 0;
-        volume.setDecreaseVolume();
+        volume.setDecreaseVolume(0);
         assertEquals(0, volume.getCurrentVolume());
-        volume.currentVolume = 1;
-        volume.setDecreaseVolume();
+        volume.setDecreaseVolume(1);
         assertEquals(0, volume.getCurrentVolume());
-        volume.currentVolume = 9;
-        volume.setDecreaseVolume();
+        volume.setDecreaseVolume(9);
         assertEquals(8, volume.getCurrentVolume());
-        volume.currentVolume = 10;
-        volume.setDecreaseVolume();
+        volume.setDecreaseVolume(10);
         assertEquals(9, volume.getCurrentVolume());
-        volume.currentVolume = 11;
-        volume.setDecreaseVolume();
+        volume.setDecreaseVolume(11);
         assertEquals(9, volume.getCurrentVolume());
     }
 
     @Test
     public void shouldNextStation() {
         RadioInside station = new RadioInside();
-        station.currentStation = -1;
-        station.setNextStation();
+        station.setNextStation(-1);
         assertEquals(1, station.getCurrentStation());
-        station.currentStation = 0;
-        station.setNextStation();
+        station.setNextStation(0);
         assertEquals(1, station.getCurrentStation());
-        station.currentStation = 1;
-        station.setNextStation();
+        station.setNextStation(1);
         assertEquals(2, station.getCurrentStation());
-        station.currentStation = 8;
-        station.setNextStation();
+        station.setNextStation(8);
         assertEquals(9, station.getCurrentStation());
-        station.currentStation = 9;
-        station.setNextStation();
+        station.setNextStation(9);
         assertEquals(0, station.getCurrentStation());
-        station.currentStation = 10;
-        station.setNextStation();
+        station.setNextStation(10);
         assertEquals(0, station.getCurrentStation());
     }
 
     @Test
     public void shouldPrevStation() {
         RadioInside station = new RadioInside();
-        station.currentStation = -1;
-        station.setPrevStation();
+        station.setPrevStation(-1);
         assertEquals(9, station.getCurrentStation());
-        station.currentStation = 0;
-        station.setPrevStation();
+        station.setPrevStation(0);
         assertEquals(9, station.getCurrentStation());
-        station.currentStation = 1;
-        station.setPrevStation();
+        station.setPrevStation(1);
         assertEquals(0, station.getCurrentStation());
-        station.currentStation = 8;
-        station.setPrevStation();
+        station.setPrevStation(8);
         assertEquals(7, station.getCurrentStation());
-        station.currentStation = 9;
-        station.setPrevStation();
+        station.setPrevStation(9);
         assertEquals(8, station.getCurrentStation());
-        station.currentStation = 10;
-        station.setPrevStation();
+        station.setPrevStation(10);
         assertEquals(8, station.getCurrentStation());
     }
 
     @Test
     public void shouldStation() {
         RadioInside station = new RadioInside();
-        station.currentStation = -1;
-        station.setStation();
+        station.setStation(-1);
         assertEquals(0, station.getCurrentStation());
-        station.currentStation = 0;
-        station.setStation();
+        station.setStation(0);
         assertEquals(0, station.getCurrentStation());
-        station.currentStation = 1;
-        station.setStation();
+        station.setStation(1);
         assertEquals(1, station.getCurrentStation());
-        station.currentStation = 8;
-        station.setStation();
+        station.setStation(8);
         assertEquals(8, station.getCurrentStation());
-        station.currentStation = 9;
-        station.setStation();
+        station.setStation(9);
         assertEquals(9, station.getCurrentStation());
-        station.currentStation = 10;
-        station.setStation();
+        station.setStation(10);
         assertEquals(9, station.getCurrentStation());
     }
 }
