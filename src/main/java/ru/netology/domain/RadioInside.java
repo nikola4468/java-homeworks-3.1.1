@@ -69,36 +69,4 @@ public class RadioInside {
     public void Station() {
         this.currentStation = getCurrentStation();
     }
-
-    public int getVolumeMax() {
-        return volumeMax;
-    }
-
-    public void setVolumeMax(int volumeMax) {
-        this.volumeMax = volumeMax;
-    }
-
-    public int getVolumeMin() {
-        return volumeMin;
-    }
-
-    public void setVolumeMin(int volumeMin) {
-        this.volumeMin = volumeMin;
-    }
-
-    public int getStationMax() {
-        return stationMax;
-    }
-
-    public void setStationMax(int stationMax) {
-        this.stationMax = stationMax;
-    }
-
-    public int getStationMin() {
-        return stationMin;
-    }
-
-    public void setStationMin(int stationMin) {
-        this.stationMin = stationMin;
-    }
 }
